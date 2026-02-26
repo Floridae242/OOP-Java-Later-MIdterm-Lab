@@ -87,18 +87,15 @@ public class Book {
 
     public void checkOut(Member borrower) {
         if (status.equals("Available")) {
-            // Check if member can borrow (hasn't reached limit)
             if (borrower.canBorrow()) {
                 status = "Borrowed";
                 this.returnDueDate = LocalDate.now().plusDays(14);
                 borrower.addBorrowedBook(this);
-                
-                // Print success message as required
+
                 System.out.println("Book '" + title + "' has been checked out successfully.");
                 System.out.println("Book " + title + " has been borrowed by " + borrower.getName() + ".");
                 System.out.println("Return Due Date: " + this.returnDueDate);
             } else {
-                // This case should be handled by the caller, but we provide a message
                 System.out.println("Member " + borrower.getName() + " has reached the borrow limit (" 
                     + borrower.getBorrowedCount() + ").");
                 System.out.println("Borrow request denied for member " + borrower.getName() + ".");
