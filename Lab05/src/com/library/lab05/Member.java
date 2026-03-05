@@ -3,16 +3,6 @@ package com.library.lab05;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Member class - Updated for Strategy Pattern
- *
- * Now uses MembershipStrategy to determine:
- * - Borrow limits
- * - Loan periods
- * - Late fee discounts
- *
- * Members can change their strategy at runtime (upgrade/downgrade).
- */
 public class Member {
     private String name;
     private String memberId;
