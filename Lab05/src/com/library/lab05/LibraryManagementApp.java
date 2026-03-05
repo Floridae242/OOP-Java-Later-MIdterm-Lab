@@ -2,21 +2,21 @@ package com.library.lab05;
 
 public class LibraryManagementApp {
     public static void main(String[] args) {
-        // ==================== SINGLETON PATTERN DEMO ====================
+   
         System.out.println("\n" + "=".repeat(70));
         System.out.println("    DESIGN PATTERNS: SINGLETON & STRATEGY");
         System.out.println("=".repeat(70));
 
-        // Get the single instance of LibrarySystem (Singleton Pattern)
+     
         System.out.println("\n[STEP 1] Initializing LibrarySystem (Singleton Pattern):");
         LibrarySystem librarySystem = LibrarySystem.getInstance();
 
-        // Try to get instance again - should return same instance
+ 
         System.out.println("Getting LibrarySystem instance again:");
         LibrarySystem sameInstance = LibrarySystem.getInstance();
         System.out.println("    ✅ Same instance? " + (librarySystem == sameInstance));
 
-        // ==================== CREATE LIBRARY ITEMS ====================
+
         System.out.println("\n[STEP 2] Creating Library Items:");
 
         // Add Physical Books
@@ -87,8 +87,6 @@ public class LibraryManagementApp {
         ebook1.checkOut(premiumMember);
         ebook2.checkOut(premiumMember); // Premium can borrow unlimited!
 
-        // ==================== STRATEGY PATTERN: LATE FEE COMPARISON
-        // ====================
         System.out.println("\n" + "=".repeat(70));
         System.out.println("    [STEP 5] STRATEGY PATTERN: Late Fee Discounts");
         System.out.println("=".repeat(70));
@@ -110,31 +108,30 @@ public class LibraryManagementApp {
         double premiumFee = premiumMember.calculateLateFee(baseFee);
         System.out.println("    Final: " + premiumFee + " Baht\n");
 
-        // ==================== STRATEGY PATTERN: RUNTIME STRATEGY CHANGE
-        // ====================
+  
         System.out.println("\n" + "=".repeat(70));
         System.out.println("    [STEP 5] STRATEGY PATTERN: Changing Strategy at Runtime");
         System.out.println("=".repeat(70));
 
         System.out.println("\n✨ KEY CONCEPT: Members can upgrade/downgrade membership dynamically!\n");
 
-        // Basic member upgrades to Premium
+
         System.out.println("--- Somsak (MemberID:M001) Upgrades from Basic to Premium ---");
         Member somsak = librarySystem.findMemberById("M001");
 
-        // Somsak tries to borrow more than basic limit
-        System.out.println("\n--- Before Upgrade: Somsak can only borrow 1 item ---");
-        book5.checkOut(basicMember); // Should fail (limit reached)
 
-        // Upgrade to Premium!
+        System.out.println("\n--- Before Upgrade: Somsak can only borrow 1 item ---");
+        book5.checkOut(basicMember); 
+
+     
         somsak.setMembershipStrategy(new PremiumMembershipStrategy());
         somsak.displayMemberInfo();
 
-        // Now Somsak can borrow more items!
-        System.out.println("\n--- After Upgrade: Somsak can now borrow more! ---");
-        book5.checkOut(basicMember); // Now unlimited!
 
-        // ==================== LIBRARY SYSTEM STATISTICS ====================
+        System.out.println("\n--- After Upgrade: Somsak can now borrow more! ---");
+        book5.checkOut(basicMember); 
+
+
         librarySystem.displayStatistics();
     }
 }
