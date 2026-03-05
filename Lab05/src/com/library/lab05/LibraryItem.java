@@ -2,14 +2,6 @@ package com.library.lab05;
 
 import java.time.LocalDate;
 
-/**
- * LibraryItem class - Updated for Strategy Pattern
- *
- * checkOut() now uses the member's MembershipStrategy to determine:
- * - Whether the member can borrow (borrow limit check)
- * - Loan period (days until due date)
- * - Displays membership type and loan period info
- */
 public class LibraryItem {
     private String title;
     private String author;
