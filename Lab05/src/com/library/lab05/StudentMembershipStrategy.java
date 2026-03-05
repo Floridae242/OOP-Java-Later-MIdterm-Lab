@@ -1,18 +1,6 @@
 package com.library.lab05;
 
-/**
- * STRATEGY PATTERN - StudentMembershipStrategy
- *
- * Special membership for students with educational discounts.
- *
- * Benefits:
- * - Borrow Limit: 5 items (more for studying)
- * - Loan Period: 21 days (3 weeks for assignments)
- * - Late Fee Discount: 20% (student discount)
- * - Cost: 49 Baht/month
- *
- * Requires student ID verification.
- */
+
 public class StudentMembershipStrategy implements MembershipStrategy {
     private static final int BORROW_LIMIT = 5;
     private static final int LOAN_PERIOD = 21;
