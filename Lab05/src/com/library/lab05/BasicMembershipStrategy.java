@@ -1,18 +1,6 @@
 package com.library.lab05;
 
-/**
- * STRATEGY PATTERN - BasicMembershipStrategy
- *
- * Standard membership for regular members.
- *
- * Benefits:
- * - Borrow Limit: 1 items
- * - Loan Period: 14 days
- * - Late Fee Discount: None (0%)
- * - Cost: FREE
- *
- * This is the default strategy for all new members.
- */
+
 public class BasicMembershipStrategy implements MembershipStrategy {
     private static final int BORROW_LIMIT = 1;
     private static final int LOAN_PERIOD = 14;
