@@ -3,31 +3,18 @@ package com.library.lab05;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * SINGLETON PATTERN - LibrarySystem
- *
- * Ensures there is only ONE instance of LibrarySystem
- * throughout the application.
- *
- * Benefits:
- * - Centralized management of all library data
- * - Single point of access for library operations
- * - Thread-safe initialization
- */
+
 public class LibrarySystem {
-    // Singleton instance
+
     private static LibrarySystem instance;
 
-    // Library data
+
     private List<LibraryItem> allItems;
     private List<Member> allMembers;
     private String libraryName;
     private String libraryLocation;
 
-    /**
-     * Private constructor - Prevents direct instantiation
-     * Only getInstance() can create the instance
-     */
+  
     private LibrarySystem() {
         this.allItems = new ArrayList<>();
         this.allMembers = new ArrayList<>();
@@ -35,11 +22,7 @@ public class LibrarySystem {
         this.libraryLocation = "123 Main Street, Downtown";
     }
 
-    /**
-     * SINGLETON METHOD: Thread-safe getInstance()
-     * Returns the single instance of LibrarySystem
-     * Creates instance on first call, returns same instance on subsequent calls
-     */
+ 
     public static synchronized LibrarySystem getInstance() {
         if (instance == null) {
             instance = new LibrarySystem();
@@ -48,7 +31,7 @@ public class LibrarySystem {
         return instance;
     }
 
-    // Getters
+
     public String getLibraryName() {
         return libraryName;
     }
@@ -65,7 +48,7 @@ public class LibrarySystem {
         return new ArrayList<>(allMembers);
     }
 
-    // Library Operations
+ 
     public void addItem(LibraryItem item) {
         allItems.add(item);
         System.out.println("    ✅ Item added to system: " + item.getTitle());
@@ -92,9 +75,7 @@ public class LibrarySystem {
         return (int) allItems.stream().filter(item -> !item.isAvailable()).count();
     }
 
-    /**
-     * Display library statistics
-     */
+    
     public void displayStatistics() {
         System.out.println("\n" + "=".repeat(60));
         System.out.println("    📚 LIBRARY SYSTEM STATISTICS (Singleton Instance)");
@@ -110,9 +91,7 @@ public class LibrarySystem {
         System.out.println("    (Singleton Pattern ensures single centralized management)");
     }
 
-    /**
-     * Find item by title
-     */
+   
     public LibraryItem findItemByTitle(String title) {
         return allItems.stream()
                 .filter(item -> item.getTitle().equalsIgnoreCase(title))
@@ -120,9 +99,7 @@ public class LibrarySystem {
                 .orElse(null);
     }
 
-    /**
-     * Find member by ID
-     */
+ 
     public Member findMemberById(String memberId) {
         return allMembers.stream()
                 .filter(member -> member.getMemberId().equals(memberId))
