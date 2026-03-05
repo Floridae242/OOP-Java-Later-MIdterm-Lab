@@ -66,7 +66,6 @@ public class Book {
         this.returnDueDate = returnDueDate;
     }
 
-
     public void printSummary() {
         System.out.println("Book[Title='" + title + "', Status='" + status + "']");
     }
@@ -96,7 +95,7 @@ public class Book {
                 System.out.println("Book " + title + " has been borrowed by " + borrower.getName() + ".");
                 System.out.println("Return Due Date: " + this.returnDueDate);
             } else {
-                System.out.println("Member " + borrower.getName() + " has reached the borrow limit (" 
+                System.out.println("Member " + borrower.getName() + " has reached the borrow limit ("
                     + borrower.getBorrowedCount() + ").");
                 System.out.println("Borrow request denied for member " + borrower.getName() + ".");
             }

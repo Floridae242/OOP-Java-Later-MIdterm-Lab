@@ -1,6 +1,6 @@
 package com.rpg.lab03;
 
-public class Warrior extends Character {
+public class    Warrior extends Character {
     private int armorValue;
 
     public Warrior(String name, int level, int healthPoints, int damage, int defense,
@@ -29,7 +29,6 @@ public class Warrior extends Character {
             return;
         }
 
-        // Warrior deals 1.5x damage
         int rawAttackDamage = (int) ((this.getDamage() + this.getWeapon().getDamage() + (this.getLevel() * 2)) * 1.5);
 
         System.out.println(this.getName() + " (Warrior) attacks "
@@ -42,7 +41,7 @@ public class Warrior extends Character {
 
     @Override
     public void receiveDamage(int rawDamage) {
-        // Subtract armor value from incoming damage before passing to parent
+
         int reducedDamage = rawDamage - this.armorValue;
         if (reducedDamage < 0) {
             reducedDamage = 0;
@@ -51,7 +50,6 @@ public class Warrior extends Character {
         System.out.println(this.getName() + "'s Armor absorbs " + Math.min(rawDamage, this.armorValue)
                 + " damage (Armor Value: " + this.armorValue + ")");
 
-        // Use super to apply the standard defense and HP reduction logic
         super.receiveDamage(reducedDamage);
     }
 

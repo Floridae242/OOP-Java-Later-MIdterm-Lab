@@ -1,10 +1,9 @@
 package com.library.lab05;
 
-
 public class PremiumMembershipStrategy implements MembershipStrategy {
-    private static final int BORROW_LIMIT = Integer.MAX_VALUE; 
+    private static final int BORROW_LIMIT = Integer.MAX_VALUE;
     private static final int LOAN_PERIOD = 30;
-    private static final double LATE_FEE_DISCOUNT = 1.0; 
+    private static final double LATE_FEE_DISCOUNT = 1.0;
     private static final double MEMBERSHIP_COST = 299.0;
 
     @Override

@@ -29,9 +29,8 @@ public class Archer extends Character {
             return;
         }
 
-        // Ranged attack with accuracy bonus and 30% range advantage
         int baseAttackDamage = this.getDamage() + this.getWeapon().getDamage() + (this.getLevel() * 2);
-        int rawAttackDamage = (int) (baseAttackDamage * 1.3); // 30% range advantage bonus
+        int rawAttackDamage = (int) (baseAttackDamage * 1.3);
 
         System.out.println(this.getName() + " (Archer) fires an arrow at "
                 + target.getName() + " with " + this.getWeapon().getName() + "!");

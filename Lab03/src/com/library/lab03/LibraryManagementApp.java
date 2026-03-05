@@ -62,7 +62,7 @@ public class LibraryManagementApp {
         physicalBooks.get(0).checkOut(member1);
         physicalBooks.get(1).checkOut(member1);
         physicalBooks.get(2).checkOut(member1);
-        eBooks.get(1).checkOut(member1); // Should be denied (limit reached)
+        eBooks.get(1).checkOut(member1);
 
         System.out.println("\n--- FINAL LIBRARY STATUS (Polymorphism Demo) ---");
         for (PhysicalBook item : physicalBooks) {
@@ -72,7 +72,6 @@ public class LibraryManagementApp {
             item.displayDetails();
         }
 
-        // ==================== METHOD OVERRIDING: Late Fee Demo ====================
         System.out.println("\n" + "=".repeat(60));
         System.out.println(" METHOD OVERRIDING: LATE FEE CALCULATION DEMO");
         System.out.println("=".repeat(60));

@@ -22,7 +22,6 @@ public class Character implements Destructible {
         this.characterClass = characterClass;
     }
 
-    // Getters and setters
     public String getName() {
         return name;
     }

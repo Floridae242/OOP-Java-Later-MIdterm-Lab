@@ -37,7 +37,7 @@ public class Mage extends Character {
         }
 
         if (this.mana >= SPELL_COST) {
-            // Magic Missile spell attack
+
             this.mana -= SPELL_COST;
             int rawAttackDamage = this.getDamage() + this.getWeapon().getDamage() + (this.getLevel() * 2);
 

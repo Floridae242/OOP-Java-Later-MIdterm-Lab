@@ -3,7 +3,7 @@ package com.rpg.lab02;
 public class Healer extends Character {
     private int healingPower;
 
-    public Healer(String name, int level, int healthPoints, int damage, int defense, 
+    public Healer(String name, int level, int healthPoints, int damage, int defense,
                   Weapon weapon, int healingPower) {
         super(name, level, healthPoints, damage, defense, weapon, "Healer");
         this.healingPower = healingPower;
@@ -30,11 +30,11 @@ public class Healer extends Character {
         }
 
         this.setHealthPoints(newHP);
-        
+
         System.out.println(this.getName() + " (Healer) casts a healing spell!");
-        System.out.println("Healing Amount: " + healAmount + " (Base: " + healingPower 
+        System.out.println("Healing Amount: " + healAmount + " (Base: " + healingPower
             + " + Level Bonus: " + (this.getLevel() * 3) + ")");
-        System.out.println("Restored " + healAmount + " HP! Current HP: " 
+        System.out.println("Restored " + healAmount + " HP! Current HP: "
             + this.getHealthPoints() + "/" + this.getMaxHealthPoints());
     }
 
@@ -56,11 +56,11 @@ public class Healer extends Character {
         }
 
         target.setHealthPoints(newHP);
-        
-        System.out.println(this.getName() + " (Healer) casts healing spell on " 
+
+        System.out.println(this.getName() + " (Healer) casts healing spell on "
             + target.getName() + "!");
         System.out.println("Healing Amount: " + healAmount);
-        System.out.println("Restored " + healAmount + " HP to " + target.getName() 
+        System.out.println("Restored " + healAmount + " HP to " + target.getName()
             + "! Their HP: " + target.getHealthPoints());
     }
 

@@ -3,7 +3,7 @@ package com.library.lab05;
 public class BasicMembershipStrategy implements MembershipStrategy {
     private static final int BORROW_LIMIT = 1;
     private static final int LOAN_PERIOD = 14;
-    private static final double MEMBERSHIP_COST = 0.0; 
+    private static final double MEMBERSHIP_COST = 0.0;
 
     @Override
     public int getBorrowLimit() {
@@ -17,6 +17,7 @@ public class BasicMembershipStrategy implements MembershipStrategy {
 
     @Override
     public double applyLateFeeDiscount(double baseFee) {
+
         return baseFee;
     }
 

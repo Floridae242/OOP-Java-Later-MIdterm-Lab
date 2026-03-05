@@ -9,10 +9,8 @@ public class LibraryManagementApp {
         System.out.println("  LIBRARY MANAGEMENT SYSTEM - POLYMORPHISM DEMO");
         System.out.println("=".repeat(60));
 
-        // Create a list of LibraryItem (demonstrates polymorphism)
         List<LibraryItem> items = new ArrayList<>();
 
-        // Add Physical Books
         items.add(new PhysicalBook("Java Programming", "John Smith", "978-0134685991",
                 450.0, "A1-04"));
         items.add(new PhysicalBook("Clean Code", "Robert Martin", "978-0132350884",
@@ -20,17 +18,14 @@ public class LibraryManagementApp {
         items.add(new PhysicalBook("Design Patterns", "Gang of Four", "978-0201633612",
                 680.0, "A3-22"));
 
-        // Add E-Books
         items.add(new EBook("Effective Java", "Joshua Bloch", "978-0134685991",
                 "https://library.ebooks.com/effective-java.pdf", 5.2));
         items.add(new EBook("Python Crash Course", "Eric Matthes", "978-1593279288",
                 "https://library.ebooks.com/python-crash.pdf", 8.7));
 
-        // Instantiate member objects
         Member member1 = new Member("M001", "Somsak");
         Member member2 = new Member("M002", "Suda");
 
-        // Display all items using polymorphism
         System.out.println("\n--- ALL LIBRARY ITEMS (Polymorphism Demo) ---");
         System.out.println("Calling printSummary() on each item in the list:");
         System.out.println();
@@ -38,7 +33,6 @@ public class LibraryManagementApp {
             item.displayDetails();
         }
 
-        // Demonstrate checkOut() method
         System.out.println("\n--- TESTING CHECKOUT FUNCTIONALITY ---");
         System.out.println("\nMember Somsak borrows Physical Book:");
         items.get(0).checkOut(member1);
@@ -47,25 +41,21 @@ public class LibraryManagementApp {
         System.out.println("\nAttempting to checkout an already borrowed item:");
         items.get(0).checkOut(member2);
 
-        // Display items after checkout using polymorphism
         System.out.println("\n--- ITEMS STATUS AFTER CHECKOUT ---");
         for (LibraryItem item : items) {
             item.printSummary();
         }
 
-        // Demonstrate returnItem() method
         System.out.println("\n--- TESTING RETURN FUNCTIONALITY ---");
         System.out.println("\nReturning Physical Book:");
         items.get(0).returnItem();
 
-        // Test borrowing limit
         System.out.println("\n--- TESTING BORROW LIMIT ---");
         items.get(0).checkOut(member1);
         items.get(1).checkOut(member1);
         items.get(2).checkOut(member1);
-        items.get(3).checkOut(member1); // Should be denied (limit reached)
+        items.get(3).checkOut(member1);
 
-        // ==================== METHOD OVERRIDING: Late Fee Demo ====================
         System.out.println("\n" + "=".repeat(60));
         System.out.println("  METHOD OVERRIDING: LATE FEE CALCULATION DEMO");
         System.out.println("=".repeat(60));
@@ -79,13 +69,10 @@ public class LibraryManagementApp {
             System.out.printf("  %s: %.2f Baht\n", item.getTitle(), lateFee);
         }
 
-        // ==================== INTERFACE: Digital Content & Taxable
-        // ====================
         System.out.println("\n" + "=".repeat(60));
         System.out.println("  INTERFACE IMPLEMENTATION: DIGITAL CONTENT & TAXABLE DEMO");
         System.out.println("=".repeat(60));
 
-        // Demonstrate Digital Content Interface
         System.out.println("\n--- DIGITAL CONTENT INTERFACE ---");
         System.out.println("Processing Digital Content for EBooks (DigitalContent interface):");
         System.out.println("Note: Only EBooks implement DigitalContent, PhysicalBooks do NOT.\n");
@@ -98,7 +85,6 @@ public class LibraryManagementApp {
             }
         }
 
-        // Demonstrate Taxable Interface
         System.out.println("\n--- TAXABLE INTERFACE ---");
         System.out.println("Processing Tax Calculation (Taxable interface):");
         System.out.println("Both EBooks and PhysicalBooks implement Taxable.\n");
@@ -110,7 +96,6 @@ public class LibraryManagementApp {
                     item.getTitle(), item.getPrice(), tax, item.getPrice() + tax);
         }
 
-        // ==================== CHALLENGE: LibraryMovie ====================
         List<DigitalContent> digitalContent = new ArrayList<>();
 
         LibraryMovie movie1 = new LibraryMovie("The Matrix", "Lana Wachowski",

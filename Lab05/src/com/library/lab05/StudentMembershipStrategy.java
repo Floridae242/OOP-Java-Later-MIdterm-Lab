@@ -1,10 +1,9 @@
 package com.library.lab05;
 
-
 public class StudentMembershipStrategy implements MembershipStrategy {
     private static final int BORROW_LIMIT = 5;
     private static final int LOAN_PERIOD = 21;
-    private static final double LATE_FEE_DISCOUNT = 0.20; // 20% discount
+    private static final double LATE_FEE_DISCOUNT = 0.20;
     private static final double MEMBERSHIP_COST = 49.0;
 
     @Override

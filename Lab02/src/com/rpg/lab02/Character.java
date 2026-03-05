@@ -1,6 +1,5 @@
 package com.rpg.lab02;
 
-
 public class Character {
     private String name;
     private int level;
@@ -11,7 +10,7 @@ public class Character {
     private Weapon weapon;
     private String characterClass;
 
-    public Character(String name, int level, int healthPoints, int damage, int defense, 
+    public Character(String name, int level, int healthPoints, int damage, int defense,
                      Weapon weapon, String characterClass) {
         this.name = name;
         this.level = level;
@@ -42,7 +41,6 @@ public class Character {
     public int getHealthPoints() {
         return healthPoints;
     }
-
 
     public void setHealthPoints(int healthPoints) {
         if (healthPoints < 0) {
@@ -101,33 +99,29 @@ public class Character {
         this.characterClass = characterClass;
     }
 
-
     public boolean isAlive() {
         return healthPoints > 0;
     }
-
 
     public void attack(Character target) {
         if (!this.isAlive()) {
             System.out.println(this.name + " is fainted and cannot attack!");
             return;
         }
-        
+
         if (!target.isAlive()) {
             System.out.println(target.getName() + " is already fainted!");
             return;
         }
 
-
         int rawAttackDamage = this.damage + this.weapon.getDamage() + (this.level * 2);
-        
-        System.out.println(this.name + " (" + this.characterClass + ") attacks " 
+
+        System.out.println(this.name + " (" + this.characterClass + ") attacks "
             + target.getName() + " with " + this.weapon.getName() + "!");
         System.out.println("Raw Attack Damage: " + rawAttackDamage);
 
         target.takeDamage(rawAttackDamage);
     }
-
 
     public void takeDamage(int rawDamage) {
 
@@ -135,8 +129,8 @@ public class Character {
         if (actualDamage < 0) {
             actualDamage = 0;
         }
-        
-        System.out.println(this.name + "'s Defense: " + this.defense + " (reduces damage by " 
+
+        System.out.println(this.name + "'s Defense: " + this.defense + " (reduces damage by "
             + Math.min(rawDamage, this.defense) + ")");
         System.out.println("Actual Damage Taken: " + actualDamage);
 
@@ -144,9 +138,9 @@ public class Character {
         if (this.healthPoints < 0) {
             this.healthPoints = 0;
         }
-        
+
         System.out.println(this.name + "'s HP: " + this.healthPoints + "/" + this.maxHealthPoints);
-        
+
         if (!this.isAlive()) {
             System.out.println(this.name + " has fainted!");
         }
