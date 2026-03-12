@@ -9,7 +9,7 @@ public class RPGGameApp {
         System.out.println("  SCENARIO 4: INTERFACES - DESTRUCTIBLE & CONSUMABLE");
         System.out.println("=".repeat(70));
 
-        System.out.println("\n[STEP 1] Creating Weapons...");
+        System.out.println("\n[STEP 1] Creating Weapons... 🗡️");
         Weapon swordWeapon = new Weapon("Excalibur", "Melee", 30, "Slash Attack");
         Weapon staffWeapon = new Weapon("Staff of Mysticism", "Magic", 20, "Spell Cast");
         Weapon bowWeapon = new Weapon("Bow of Elven Make", "Ranged", 18, "Precise Shot");
